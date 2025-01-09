@@ -6,18 +6,18 @@ export const Hero = () => {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center animate-fadeIn">
           <h1 className="text-4xl font-bold tracking-tight text-secondary sm:text-6xl">
-            Your AI Business Coach for Startup Success
+            Tu Coach de Negocios con IA para el Éxito Empresarial
           </h1>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
-            Transform your business idea into a solid plan. Get expert guidance on business planning,
-            marketing strategy, and execution - all powered by advanced AI.
+            Transforma tu idea de negocio en un plan sólido. Obtén orientación experta en planificación empresarial,
+            estrategia de marketing y ejecución - todo impulsado por IA avanzada.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <a
               href="#"
               className="rounded-md bg-primary px-6 py-3 text-lg font-semibold text-white shadow-sm hover:bg-primary/90 transition-colors flex items-center gap-2"
             >
-              Start Your Journey <ArrowRight className="w-5 h-5" />
+              Comienza tu Viaje <ArrowRight className="w-5 h-5" />
             </a>
           </div>
         </div>

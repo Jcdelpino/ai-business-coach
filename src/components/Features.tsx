@@ -2,23 +2,23 @@ import { Brain, Target, ChartBar, Rocket } from "lucide-react";
 
 const features = [
   {
-    name: "Business Planning",
-    description: "Get detailed business plans tailored to your industry and goals.",
+    name: "Planificación de Negocios",
+    description: "Obtén planes de negocio detallados adaptados a tu industria y objetivos.",
     icon: Brain,
   },
   {
-    name: "Marketing Strategy",
-    description: "Develop comprehensive marketing plans that reach your target audience.",
+    name: "Estrategia de Marketing",
+    description: "Desarrolla planes de marketing completos que lleguen a tu público objetivo.",
     icon: Target,
   },
   {
-    name: "Financial Projections",
-    description: "Generate realistic financial forecasts and budgeting plans.",
+    name: "Proyecciones Financieras",
+    description: "Genera pronósticos financieros y planes de presupuesto realistas.",
     icon: ChartBar,
   },
   {
-    name: "Launch Strategy",
-    description: "Create step-by-step launch plans to bring your product to market.",
+    name: "Estrategia de Lanzamiento",
+    description: "Crea planes de lanzamiento paso a paso para llevar tu producto al mercado.",
     icon: Rocket,
   },
 ];
@@ -28,12 +28,12 @@ export const Features = () => {
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-primary">Everything you need</h2>
+          <h2 className="text-base font-semibold leading-7 text-primary">Todo lo que necesitas</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
-            From Idea to Successful Business
+            De la Idea al Negocio Exitoso
           </p>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
-            Get all the tools and guidance you need to transform your business idea into reality.
+            Obtén todas las herramientas y guía que necesitas para transformar tu idea de negocio en realidad.
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">

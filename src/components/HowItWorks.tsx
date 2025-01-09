@@ -3,18 +3,18 @@ import { Check } from "lucide-react";
 const steps = [
   {
     id: "01",
-    name: "Share Your Vision",
-    description: "Tell us about your business idea and goals.",
+    name: "Comparte tu Visión",
+    description: "Cuéntanos sobre tu idea de negocio y objetivos.",
   },
   {
     id: "02",
-    name: "Get Your Plan",
-    description: "Receive a customized business and marketing strategy.",
+    name: "Obtén tu Plan",
+    description: "Recibe una estrategia de negocio y marketing personalizada.",
   },
   {
     id: "03",
-    name: "Execute & Succeed",
-    description: "Follow the step-by-step guidance to launch your business.",
+    name: "Ejecuta y Triunfa",
+    description: "Sigue la guía paso a paso para lanzar tu negocio.",
   },
 ];
 
@@ -23,9 +23,9 @@ export const HowItWorks = () => {
     <div className="bg-muted py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-base font-semibold leading-7 text-primary">How it works</h2>
+          <h2 className="text-base font-semibold leading-7 text-primary">Cómo funciona</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
-            Three Simple Steps to Success
+            Tres Simples Pasos al Éxito
           </p>
         </div>
         <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">

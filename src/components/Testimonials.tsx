@@ -1,18 +1,18 @@
 const testimonials = [
   {
-    content: "This AI coach helped me transform my vague idea into a concrete business plan in days.",
-    author: "Sarah Johnson",
-    role: "Founder, TechStart",
+    content: "Este coach de IA me ayudó a transformar mi idea vaga en un plan de negocio concreto en días.",
+    author: "Sara Jiménez",
+    role: "Fundadora, TechStart",
   },
   {
-    content: "The marketing strategies provided were incredibly detailed and actually worked.",
-    author: "Michael Chen",
+    content: "Las estrategias de marketing proporcionadas fueron increíblemente detalladas y realmente funcionaron.",
+    author: "Miguel Chen",
     role: "CEO, GrowthLabs",
   },
   {
-    content: "Having this AI coach was like having a seasoned entrepreneur guiding me every step of the way.",
-    author: "Emma Davis",
-    role: "Founder, EcoSolutions",
+    content: "Tener este coach de IA fue como tener un empresario experimentado guiándome en cada paso del camino.",
+    author: "Emma Díaz",
+    role: "Fundadora, EcoSolutions",
   },
 ];
 
@@ -21,9 +21,9 @@ export const Testimonials = () => {
     <div className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-xl text-center">
-          <h2 className="text-lg font-semibold leading-8 text-primary">Testimonials</h2>
+          <h2 className="text-lg font-semibold leading-8 text-primary">Testimonios</h2>
           <p className="mt-2 text-3xl font-bold tracking-tight text-secondary sm:text-4xl">
-            Trusted by Entrepreneurs
+            Confiado por Emprendedores
           </p>
         </div>
         <div className="mx-auto mt-16 flow-root max-w-2xl lg:mx-0 lg:max-w-none">
