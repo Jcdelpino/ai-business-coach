@@ -6,8 +6,8 @@ export const Hero = () => {
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop"
-          alt="Futuristic AI Background"
+          src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2070&auto=format&fit=crop"
+          alt="Android AI Background"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-black/50" /> {/* Dark overlay for better text contrast */}
