@@ -1,18 +1,23 @@
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+
 const testimonials = [
   {
     content: "Este coach de IA me ayudó a transformar mi idea vaga en un plan de negocio concreto en días.",
     author: "Sara Jiménez",
     role: "Fundadora, TechStart",
+    image: "/placeholder.svg"
   },
   {
     content: "Las estrategias de marketing proporcionadas fueron increíblemente detalladas y realmente funcionaron.",
     author: "Miguel Chen",
     role: "CEO, GrowthLabs",
+    image: "/placeholder.svg"
   },
   {
     content: "Tener este coach de IA fue como tener un empresario experimentado guiándome en cada paso del camino.",
     author: "Emma Díaz",
     role: "Fundadora, EcoSolutions",
+    image: "/placeholder.svg"
   },
 ];
 
@@ -38,6 +43,10 @@ export const Testimonials = () => {
                     <p>"{testimonial.content}"</p>
                   </blockquote>
                   <figcaption className="mt-8 flex items-center gap-x-4">
+                    <Avatar>
+                      <AvatarImage src={testimonial.image} alt={testimonial.author} />
+                      <AvatarFallback>{testimonial.author.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+                    </Avatar>
                     <div>
                       <div className="font-semibold text-secondary">{testimonial.author}</div>
                       <div className="text-sm text-muted-foreground">{testimonial.role}</div>
