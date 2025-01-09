@@ -14,7 +14,7 @@ export const Hero = () => {
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <a
-              href="#"
+              href="elevenlabs-convai agent-id=FqFBkkjbIAKwoZ8ZPlFe"
               className="rounded-md bg-primary px-6 py-3 text-lg font-semibold text-white shadow-sm hover:bg-primary/90 transition-colors flex items-center gap-2"
             >
               Comienza tu Viaje <ArrowRight className="w-5 h-5" />
