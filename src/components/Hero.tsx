@@ -6,11 +6,11 @@ export const Hero = () => {
       {/* Background image with overlay */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1534723452862-4c874018d66d?q=80&w=2070&auto=format&fit=crop"
-          alt="Humanoid AI Background"
+          src="/lovable-uploads/bde2816f-c623-4cfc-aa0a-fe57c8dfac0e.png"
+          alt="AI Business Coach Concept"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/50" /> {/* Dark overlay for better text contrast */}
+        <div className="absolute inset-0 bg-black/60" /> {/* Ajustado el overlay para mejor legibilidad */}
       </div>
 
       <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
