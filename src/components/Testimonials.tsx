@@ -5,19 +5,19 @@ const testimonials = [
     content: "Este coach de IA me ayudó a transformar mi idea vaga en un plan de negocio concreto en días.",
     author: "Sara Jiménez",
     role: "Fundadora, TechStart",
-    image: "/placeholder.svg"
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158"
   },
   {
     content: "Las estrategias de marketing proporcionadas fueron increíblemente detalladas y realmente funcionaron.",
     author: "Miguel Chen",
     role: "CEO, GrowthLabs",
-    image: "/placeholder.svg"
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d"
   },
   {
     content: "Tener este coach de IA fue como tener un empresario experimentado guiándome en cada paso del camino.",
     author: "Emma Díaz",
     role: "Fundadora, EcoSolutions",
-    image: "/placeholder.svg"
+    image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7"
   },
 ];
 
