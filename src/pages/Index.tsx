@@ -4,6 +4,7 @@ import { HowItWorks } from "@/components/HowItWorks";
 import { Testimonials } from "@/components/Testimonials";
 import { CtaSection } from "@/components/CtaSection";
 import { ConsultationInterface } from "@/components/ConsultationInterface";
+import { ElevenLabsWidget } from "@/components/ElevenLabsWidget";
 
 const Index = () => {
   return (
@@ -14,6 +15,7 @@ const Index = () => {
       <HowItWorks />
       <Testimonials />
       <CtaSection />
+      <ElevenLabsWidget />
     </div>
   );
 };
