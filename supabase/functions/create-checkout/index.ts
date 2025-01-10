@@ -58,7 +58,8 @@ serve(async (req) => {
       customer_email: customer_id ? undefined : email,
       line_items: [
         {
-          price: 'price_1QfkmGE4HjSSqfnSYUxsNHKS', // Using the price ID from your configuration
+          // Change this to your recurring price ID from Stripe
+          price: 'price_1OeGlGE4HjSSqfnSHRPVGgxw',
           quantity: 1,
         },
       ],
