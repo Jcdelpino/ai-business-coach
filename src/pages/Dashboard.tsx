@@ -1,10 +1,6 @@
-import { Hero } from "@/components/Hero";
-import { Features } from "@/components/Features";
-import { HowItWorks } from "@/components/HowItWorks";
-import { Testimonials } from "@/components/Testimonials";
-import { CtaSection } from "@/components/CtaSection";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
+import { ConsultationInterface } from "@/components/ConsultationInterface";
 
 const Dashboard = () => {
   const handleSignOut = async () => {
@@ -12,7 +8,7 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <div className="p-4 bg-white shadow">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <h1 className="text-xl font-semibold text-secondary">Mi Coach de Negocios</h1>
@@ -21,11 +17,9 @@ const Dashboard = () => {
           </Button>
         </div>
       </div>
-      <Hero />
-      <Features />
-      <HowItWorks />
-      <Testimonials />
-      <CtaSection />
+      <main className="max-w-7xl mx-auto py-8 px-4">
+        <ConsultationInterface />
+      </main>
     </div>
   );
 };
