@@ -8,7 +8,6 @@ const corsHeaders = {
 };
 
 serve(async (req) => {
-  // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
@@ -19,7 +18,6 @@ serve(async (req) => {
   );
 
   try {
-    // Get the session or user object
     const authHeader = req.headers.get('Authorization')!;
     const token = authHeader.replace('Bearer ', '');
     const { data } = await supabaseClient.auth.getUser(token);
@@ -42,9 +40,18 @@ serve(async (req) => {
     let customer_id = undefined;
     if (customers.data.length > 0) {
       customer_id = customers.data[0].id;
+      const subscriptions = await stripe.subscriptions.list({
+        customer: customers.data[0].id,
+        status: 'active',
+        price: 'price_1QfkmGE4HjSSqfnSYUxsNHKS',
+        limit: 1,
+      });
+
+      if (subscriptions.data.length > 0) {
+        throw new Error("Customer already has an active subscription");
+      }
     }
 
-    console.log('Creating payment session...');
     const session = await stripe.checkout.sessions.create({
       customer: customer_id,
       customer_email: customer_id ? undefined : email,
@@ -55,11 +62,10 @@ serve(async (req) => {
         },
       ],
       mode: 'subscription',
-      success_url: `${req.headers.get('origin')}/payment-success`,
-      cancel_url: `${req.headers.get('origin')}/pricing`,
+      success_url: `${req.headers.get('origin')}/dashboard`,
+      cancel_url: `${req.headers.get('origin')}/`,
     });
 
-    console.log('Payment session created:', session.id);
     return new Response(
       JSON.stringify({ url: session.url }),
       {
@@ -68,7 +74,7 @@ serve(async (req) => {
       }
     );
   } catch (error) {
-    console.error('Error creating payment session:', error);
+    console.error('Error creating checkout session:', error);
     return new Response(
       JSON.stringify({ error: error.message }),
       {
