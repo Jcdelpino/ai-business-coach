@@ -11,42 +11,53 @@ const Dashboard = () => {
     await supabase.auth.signOut();
   };
 
-  const { data: subscriptionStatus, isLoading } = useQuery({
+  const { data: subscriptionStatus, isLoading, error } = useQuery({
     queryKey: ["subscription"],
     queryFn: async () => {
-      const { data: { session } } = await supabase.auth.getSession();
-      const response = await fetch(
-        "https://xazocpvqdeuqodetyzcg.supabase.co/functions/v1/check-subscription",
-        {
+      try {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (!session) throw new Error("No session found");
+
+        const { data, error } = await supabase.functions.invoke("check-subscription", {
           headers: {
-            Authorization: `Bearer ${session?.access_token}`,
+            Authorization: `Bearer ${session.access_token}`,
           },
-        }
-      );
-      const data = await response.json();
-      return data;
+        });
+
+        if (error) throw error;
+        return data;
+      } catch (error) {
+        console.error("Error checking subscription:", error);
+        throw error;
+      }
     },
   });
 
   const startSubscription = async () => {
     try {
       const { data: { session } } = await supabase.auth.getSession();
-      const response = await fetch(
-        "https://xazocpvqdeuqodetyzcg.supabase.co/functions/v1/create-checkout",
-        {
-          headers: {
-            Authorization: `Bearer ${session?.access_token}`,
-          },
-        }
-      );
-      const { url, error } = await response.json();
-      if (error) throw new Error(error);
-      if (url) window.location.href = url;
+      if (!session) {
+        toast.error("Por favor inicia sesión primero");
+        return;
+      }
+
+      const { data, error } = await supabase.functions.invoke("create-checkout", {
+        headers: {
+          Authorization: `Bearer ${session.access_token}`,
+        },
+      });
+
+      if (error) throw error;
+      if (data?.url) window.location.href = data.url;
     } catch (error) {
-      toast.error("Error creating checkout session");
-      console.error("Error:", error);
+      console.error("Error creating checkout session:", error);
+      toast.error("Error al crear la sesión de pago");
     }
   };
+
+  if (error) {
+    console.error("Subscription check error:", error);
+  }
 
   return (
     <div className="min-h-screen bg-background">
