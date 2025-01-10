@@ -40,10 +40,10 @@ serve(async (req) => {
     let customer_id = undefined;
     if (customers.data.length > 0) {
       customer_id = customers.data[0].id;
+      // Check for any active subscription
       const subscriptions = await stripe.subscriptions.list({
         customer: customers.data[0].id,
         status: 'active',
-        price: 'price_1QfkmGE4HjSSqfnSYUxsNHKS',
         limit: 1,
       });
 
@@ -52,12 +52,13 @@ serve(async (req) => {
       }
     }
 
+    console.log('Creating payment session...');
     const session = await stripe.checkout.sessions.create({
       customer: customer_id,
       customer_email: customer_id ? undefined : email,
       line_items: [
         {
-          price: 'price_1QfkmGE4HjSSqfnSYUxsNHKS',
+          price: 'price_1QfkmGE4HjSSqfnSYUxsNHKS', // Using the price ID from your configuration
           quantity: 1,
         },
       ],
@@ -66,6 +67,7 @@ serve(async (req) => {
       cancel_url: `${req.headers.get('origin')}/`,
     });
 
+    console.log('Payment session created:', session.id);
     return new Response(
       JSON.stringify({ url: session.url }),
       {

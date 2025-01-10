@@ -47,10 +47,10 @@ serve(async (req) => {
       );
     }
 
+    // Instead of filtering by price, just check for any active subscription
     const subscriptions = await stripe.subscriptions.list({
       customer: customers.data[0].id,
       status: 'active',
-      price: 'price_1QfkmGE4HjSSqfnSYUxsNHKS',
       limit: 1,
     });
 
